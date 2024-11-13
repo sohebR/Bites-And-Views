@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Dishes of Delhi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script.js"></script>
+</head>
+<header class="relative h-screen bg-cover bg-center bg-fixed" style="background-image: url('food2.jpeg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-center">
+            <div class="text-white">
+                <h1 class="text-7xl font-extrabold animate-fadeIn font-serif">Expore The Culinary Fiesta of your City!</h1>
+                <p class="mt-4 text-3xl animate-fadeIn font-mono">~ A Journey of Taste ~</p>
+            </div>
+        </div>
+        <!-- Login/Register Button -->
+        <div class="absolute top-4 right-8">
+            <button onclick="toggleLoginModal()" class="bg-gray-900 font-serif text-white px-3 py-2 rounded hover:transition-colors hover:bg-gray-600 hover:font-mono ">Login/Register</button>
+        </div>
+</header>
+<body class="bg-gray-100">
+
+    
+    <!-- Navbar -->
+    <nav class=" bg-[url('bg1.jpeg')] text-white py-4 shadow-lg font-serif">
+        <div class="container mx-auto flex justify-center space-x-9">
+            <!-- Example of hover padding on a navigation link -->
+            <a href="index.html" class="hover:rounded-lg hover:bg-orange-400 hover:px-4 py-2 hover:transition duration-300 hover:ease-in-out">HOME</a>
+            <a href="food.html" class="hover:rounded-lg hover:bg-orange-400 hover:px-4 py-2 hover:transition duration-300 hover:ease-in-out">FOOD</a>
+            <a href="#" class="hover:rounded-lg hover:bg-orange-400 hover:px-4 py-2 hover:transition duration-300 hover:ease-in-out">SIGHT-SEEING</a>
+        </div>
+    </nav>
+
+
+    <!-- Buttons Section -->
+    <section class="container mx-auto mt-16 text-center">
+        <div class="flex justify-center space-x-6">
+            <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600" id="veg-btn">Veg</button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600" id="non-veg-btn">Non-Veg</button>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" id="street-btn">Street Style</button>
+            <button class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600" id="restaurant-btn">Restaurant Style</button>
+        </div>
+    </section>
+
+    <!-- Dishes Section -->
+    <section id="dishes" class="container mx-auto mt-16">
+        <h3 class="text-4xl font-bold text-center">Famous Dishes of Delhi</h3>
+        <p class="text-center text-gray-700 mt-4">Discover the mouth-watering dishes that define the culinary scene of Delhi.</p>
+
+        <!-- Horizontal Scroll for Dish List -->
+        <div class="overflow-x-auto whitespace-nowrap mt-8">
+            <div class="inline-flex space-x-6" id="dish-list">
+                <!-- Dynamic dish items will be injected here using JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[url('bg1.jpeg')] bg-orange-300 text-white py-6 font-serif">
+        <div class="container mx-auto text-center space-x-6">
+            <a href="index.html" class="hover:bg-orange-400 hover:px-4 py-2 hover:rounded-lg hover:transition duration-300 hover:ease-in-out">FAQS</a>
+            <a href="contact.html" class="hover:bg-orange-400 hover:px-4 py-2 hover:rounded-lg hover:transition duration-300 hover:ease-in-out">CONTACT US</a>
+            <a href="index.html" class="hover:bg-orange-400 hover:px-4 py-2 hover:rounded-lg hover:transition duration-300 hover:ease-in-out">TERMS OF USE</a>
+            <a href="creator.html" class="hover:bg-orange-400 hover:px-4 py-2 hover:rounded-lg hover:transition duration-300 hover:ease-in-out">CREATORS</a>
+            <a href="index.html" class="hover:bg-orange-400 hover:px-4 py-2 hover:rounded-lg hover:transition duration-300 hover:ease-in-out">&copy;</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+     const dishes = [
+        {
+            name: "Chole Bhature",
+            type: "Veg",
+            style: "Restaurant",
+            image: "food3.jpg",
+            restaurants: [
+                {
+                    name: "Sita Ram Diwan Chand",
+                    address: "Paharganj, New Delhi",
+                    image: "",
+                    phone: "+91 12345 67890",
+                    mapLink: "https://goo.gl/maps/example1"
+                },
+                {
+                    name: "Bhogal Restaurant",
+                    address: "Connaught Place, New Delhi",
+                    phone: "+91 23456 78901",
+                    mapLink: "https://goo.gl/maps/example2"
+                },
+                {
+                    name: "Punjabi By Nature",
+                    address: "Rajouri Garden, New Delhi",
+                    phone: "+91 34567 89012",
+                    mapLink: "https://goo.gl/maps/example3"
+                }
+            ]
+        },
+        {
+            name: "Butter Chicken",
+            type: "Non-Veg",
+            style: "Restaurant",
+            image: "food4.jpg",
+            restaurants: [
+                {
+                    name: "Moti Mahal",
+                    address: "Daryaganj, New Delhi",
+                    phone: "+91 98765 43210",
+                    mapLink: "https://goo.gl/maps/example4"
+                },
+                {
+                    name: "Kake Da Hotel",
+                    address: "Connaught Place, New Delhi",
+                    phone: "+91 87654 32109",
+                    mapLink: "https://goo.gl/maps/example5"
+                },
+                {
+                    name: "Gulati Restaurant",
+                    address: "Pandara Road, New Delhi",
+                    phone: "+91 76543 21098",
+                    mapLink: "https://goo.gl/maps/example6"
+                }
+            ]
+        },
+        {
+            name: "Aloo Tikki",
+            type: "Veg",
+            style: "Street",
+            image: "food5.jpg",
+            restaurants: [
+                {
+                    name: "Natraj Chaat",
+                    address: "Chandni Chowk, Old Delhi",
+                    phone: "+91 65432 10987",
+                    mapLink: "https://goo.gl/maps/example7"
+                },
+                {
+                    name: "Bittoo Tikki Wala",
+                    address: "Pitampura, New Delhi",
+                    phone: "+91 54321 09876",
+                    mapLink: "https://goo.gl/maps/example8"
+                },
+                {
+                    name: "Raju Chaat Bhandar",
+                    address: "Janakpuri, New Delhi",
+                    phone: "+91 43210 98765",
+                    mapLink: "https://goo.gl/maps/example9"
+                }
+            ]
+        },
+        {
+            name: "Pani Puri",
+            type: "Veg",
+            style: "Street",
+            image: "food6.jpg",
+            restaurants: [
+                {
+                    name: "ABC chaat wala",
+                    address: "Chandni Chowk, Old Delhi",
+                    phone: "+91 65432 10987",
+                    mapLink: "https://goo.gl/maps/example7"
+                },
+                {
+                    name: "Bittoo Tikki Wala",
+                    address: "Pitampura, New Delhi",
+                    phone: "+91 54321 09876",
+                    mapLink: "https://goo.gl/maps/example8"
+                },
+                {
+                    name: "Raju Chaat Bhandar",
+                    address: "Janakpuri, New Delhi",
+                    phone: "+91 43210 98765",
+                    mapLink: "https://goo.gl/maps/example9"
+                }
+            ]
+        },
+        {
+            name: "Nihari",
+            type: "Non-Veg",
+            style: "Restaurant",
+            image: "food7.jpg",
+            restaurants: [
+                {
+                    name: "Kareem's",
+                    address: "16, Gali Kababian, Jama Masjid, Old Delhi, Delhi 110006",
+                    image: "",
+                    phone: "+91 11 2326 4981",
+                    mapLink: "https://maps.app.goo.gl/TqyVHrK9Ui8iCn2S8"
+                },
+                {
+                    name: "Haji Shabrati Nihari Wale",
+                    address: "722, Haveli Azam Khan, Chitli Qabar Chowk, Jama Masjid, New Delhi, Delhi 110006",
+                    phone: "+91 98186 15383",
+                    mapLink: "https://maps.app.goo.gl/nHuV1Rc3B5xnF82n8"
+                },
+                {
+                    name: "Al Jawahar",
+                    address: "8, Matia Mahal Road, Opposite Gate 1, Jama Masjid, New Delhi, Delhi 110006",
+                    phone: "+91 11 2326 9241",
+                    mapLink: "https://maps.app.goo.gl/7Ys8uogMoqBWHcqQA"
+                }
+            ]
+        },
+        {
+            name: "Jalebi",
+            type: "Veg",
+            style: "Street",
+            image: "food8.jpg",
+            restaurants: [
+                {
+                    name: "Old Famous Jalebi Wala",
+                    address: "Dariba Kalan Road, Chandni Chowk, New Delhi, Delhi 110006",
+                    image: "",
+                    phone: "+91 11 2325 6973",
+                    mapLink: "https://maps.app.goo.gl/a1puoZLc7pG8xvVo9"
+                },
+                {
+                    name: "Jalebi Junction",
+                    address: "7, Central Market, Punjabi Bagh West, New Delhi, Delhi 110026",
+                    phone: "+91 98998 90900",
+                    mapLink: "https://goo.gl/maps/example2"
+                },
+                {
+                    name: "Hira Sweets",
+                    address: "Shop No 746, Nai Sarak, Gali Hira Lal, Chandni Chowk, New Delhi, Delhi 110006",
+                    phone: "+91 11 2395 3473",
+                    mapLink: "https://maps.app.goo.gl/yDd1bGh1aR8usJzp8"
+                }
+            ]
+        }
+    ];
+
+    const dishList = document.getElementById("dish-list");
+
+    // Function to generate dish and restaurant cards dynamically
+    function generateDishCards(dishes) {
+        dishList.innerHTML = ""; // Clear previous content
+        dishes.forEach(dish => {
+            // Create dish card
+            let dishCard = document.createElement("div");
+            dishCard.classList.add("bg-white", "shadow-lg", "rounded-lg", "p-6", "mb-8");
+
+            // Dish image
+            let dishImage = document.createElement("img");
+            dishImage.src = dish.image;
+            dishImage.alt = dish.name;
+            dishImage.classList.add("rounded-md", "mb-4");
+
+            // Dish name
+            let dishName = document.createElement("h4");
+            dishName.classList.add("text-2xl", "font-bold");
+            dishName.textContent = dish.name;
+
+            // Restaurant List
+            let restaurantList = document.createElement("div");
+            restaurantList.classList.add("mt-4");
+
+            dish.restaurants.forEach(restaurant => {
+                let restaurantCard = document.createElement("div");
+                restaurantCard.classList.add("bg-gray-100", "rounded-lg", "p-4", "mb-4");
+
+                let restaurantName = document.createElement("h5");
+                restaurantName.classList.add("text-lg", "font-bold");
+                restaurantName.textContent = restaurant.name;
+
+                let restaurantAddress = document.createElement("p");
+                restaurantAddress.textContent = `Address: ${restaurant.address}`;
+
+                let restaurantPhone = document.createElement("p");
+                restaurantPhone.textContent = `Phone: ${restaurant.phone}`;
+
+                let restaurantMap = document.createElement("a");
+                restaurantMap.href = restaurant.mapLink;
+                restaurantMap.target = "_blank";
+                restaurantMap.classList.add("text-blue-500");
+                restaurantMap.textContent = "View on Google Maps";
+
+                restaurantCard.appendChild(restaurantName);
+                restaurantCard.appendChild(restaurantAddress);
+                restaurantCard.appendChild(restaurantPhone);
+                restaurantCard.appendChild(restaurantMap);
+                restaurantList.appendChild(restaurantCard);
+            });
+
+            // Append to dish card
+            dishCard.appendChild(dishImage);
+            dishCard.appendChild(dishName);
+            dishCard.appendChild(restaurantList);
+            dishList.appendChild(dishCard);
+        });
+    }
+
+    // Display all dishes initially
+    generateDishCards(dishes);
+
+    // Filter buttons functionality
+    document.getElementById("veg-btn").addEventListener("click", function () {
+        let filteredDishes = dishes.filter(dish => dish.type === "Veg");
+        generateDishCards(filteredDishes);
+    });
+
+    document.getElementById("non-veg-btn").addEventListener("click", function () {
+        let filteredDishes = dishes.filter(dish => dish.type === "Non-Veg");
+        generateDishCards(filteredDishes);
+    });
+
+    document.getElementById("street-btn").addEventListener("click", function () {
+        let filteredDishes = dishes.filter(dish => dish.style === "Street");
+        generateDishCards(filteredDishes);
+    });
+
+    document.getElementById("restaurant-btn").addEventListener("click", function () {
+        let filteredDishes = dishes.filter(dish => dish.style === "Restaurant");
+        generateDishCards(filteredDishes);
+    });
+});
+
+    </script>
+
+</body>
+</html>
