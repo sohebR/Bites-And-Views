@@ -41,7 +41,7 @@ Welcome to an exciting web project that takes you on a **virtual food tour** thr
 ---
 
 ### **Live Demo 🎥:**
-Check out a live demo of this project [here](https://github.com/sohebR/Bites-And-Views.git).
+Check out a live demo of this project [here](https://sohebr.github.io/Bites-And-Views/).
 
 ---
 
